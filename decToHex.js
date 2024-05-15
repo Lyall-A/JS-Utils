@@ -1,0 +1,1 @@
+module.exports = dec => dec.toString(16);

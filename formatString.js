@@ -1,5 +1,5 @@
 function formatString(str, obj) {
-    let formatted = str;
+    let formatted = str || "";
 
     // {}: Variable
     formatted = formatted.replace(/\\?(?<!@){(.+?)}/g, (match, value) => {

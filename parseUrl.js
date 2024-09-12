@@ -1,6 +1,6 @@
 const parseQuery = require("./parseQuery");
 
-module.exports = string => {
+function parseUrl(string) {
     const splits = {
         "://": string.split("://"),
         ":": string.split(":"),
@@ -39,3 +39,5 @@ module.exports = string => {
         query
     };
 }
+
+module.exports = parseUrl;

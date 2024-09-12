@@ -1,1 +1,5 @@
-module.exports = dec => dec.toString(16);
+function decToHex(dec) {
+    return dec.toString(16);
+}
+
+module.exports = decToHex;

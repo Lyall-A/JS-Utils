@@ -1,4 +1,4 @@
-function formatString(str, obj) {
+function formatString(str, obj = { }) {
     let formatted = str || "";
 
     // {}: Variable
@@ -11,7 +11,7 @@ function formatString(str, obj) {
     formatted = formatted.replace(/\\?@{(.+?)}/g, (match, value) => {
         if (match.startsWith("\\")) return match.replace("\\", "");
         try {
-            return eval(`${Object.entries(obj).map(i => `let ${i[0]} = ${i[1]};`).join("")}${value}`);
+            return eval(`${Object.entries(obj).map(i => `let ${i[0]} = ${JSON.stringify(i[1])};`).join("")}${value}`);
         } catch (err) {
             return;
         }
